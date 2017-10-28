@@ -44,10 +44,8 @@ for (var i = 0; i < strs.length; ++i) {
 console.log(strs[i]);
 }*/
 
-for (var i = 0; i < 2; i++) {
-    q.drain = function () {
-        fs.writeFileSync('./data.json', JSON.stringify(results, null, 4));
-    }
+q.drain = function () {
+    fs.writeFileSync('./data.json', JSON.stringify(results, null, 4));
 }
 
 q.push(URL);
